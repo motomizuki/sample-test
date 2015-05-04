@@ -125,5 +125,5 @@ def cancel(user_id, event_id):
         except:
             return {'code': 500, 'message': 'database error.'}
     else:
-        return {'code': 502, 'message': 'can not unreserve not reaserved event.'}
+        return {'code': 502, 'message': 'can not cancel not reaserved event.'}
 

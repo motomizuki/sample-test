@@ -3,6 +3,7 @@ __author__ = 'motomizuki'
 from flask import Flask
 from app.api.auth import module as auth
 from app.api.users import module as users
+from app.api.companies import module as companies
 from app.models import db
 
 # flask app
@@ -16,3 +17,4 @@ db.init_app(app)
 # blueprint modules
 app.register_blueprint(auth, url_prefix='/api/auth')
 app.register_blueprint(users, url_prefix='/api/users')
+app.register_blueprint(companies, url_prefix='/api/companies')
