@@ -1,10 +1,11 @@
 __author__ = 'mizumoto'
 
 from flask.ext.sqlalchemy import SQLAlchemy
+
 db = SQLAlchemy()
 
 '''
-CREATE TABLE IF NOT EXISTS users (
+#CREATE TABLE IF NOT EXISTS users (
   id serial PRIMARY KEY,
   name varchar(100) NOT NULL,
   password varchar(100) NOT NULL,
@@ -63,11 +64,9 @@ class Events(db.Model):
 );
 '''
 class Attends(db.Model):
-    __tablename__ = 'attends'
     user_id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, primary_key=True)
     reserved_at = db.Column(db.DateTime, nullable=False)
-
 
     def __init__(self, user_id, event_id):
         self.user_id = user_id
