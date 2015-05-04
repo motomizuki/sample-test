@@ -45,3 +45,11 @@ def create_token(user):
                           u'password': user.password})
     return token
 
+def get_user_from_token(token):
+    if token is None:
+        return False
+
+    email, password = decode_token(token)
+    #if invalid email, password, existed_user return False
+    user = existed_user(email, password)
+    return user

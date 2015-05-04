@@ -5,7 +5,16 @@ from app.models import Events, Users
 
 module = Blueprint('users', __name__, url_prefix='/api/users')
 
-
+'''
+@param {string} from: required
+@param {number} offset: optional, min 0
+@param {number} limit: optional, min 1
+@return {number} code: status code
+@return {object} events: event list
+@description
+login is not required
+get events list.
+'''
 @module.route('/events')
 def events():
     events_from = request.args.get("from")
@@ -50,3 +59,4 @@ def events():
         json_results.append(d)
 
     return jsonify({'code': 200, 'events': json_results})
+

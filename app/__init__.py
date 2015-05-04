@@ -5,6 +5,7 @@ from app.api.auth import module as auth
 from app.api.users import module as users
 from app.models import db
 
+# flask app
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'adf|SW+k64vKielnfEg23/+'
 
